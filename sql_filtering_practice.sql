@@ -19,51 +19,70 @@ INSERT INTO employees VALUES
 (7, 'Karan', 'Sales', 45000, 'Delhi'),
 (8, 'Sneha', 'HR', 52000, 'Pune');
 
--- 1. WHERE
+
+-- Query 1: WHERE
 SELECT * FROM employees
 WHERE department = 'IT';
 
--- 2. WHERE with salary
+
+-- Query 2: WHERE with Salary
 SELECT * FROM employees
 WHERE salary > 50000;
 
--- 3. WHERE with city
+
+-- Query 3: WHERE with City
 SELECT * FROM employees
 WHERE city = 'Delhi';
 
--- 4. IN
+
+-- Query 4: IN
 SELECT * FROM employees
 WHERE department IN ('IT', 'HR');
 
--- 5. IN with cities
+
+-- Query 5: IN with Cities
 SELECT * FROM employees
 WHERE city IN ('Delhi', 'Mumbai');
 
--- 6. BETWEEN
+
+-- Query 6: BETWEEN
 SELECT * FROM employees
 WHERE salary BETWEEN 40000 AND 60000;
 
--- 7. BETWEEN with employee ID
+
+-- Query 7: BETWEEN with Employee ID
 SELECT * FROM employees
 WHERE employee_id BETWEEN 2 AND 6;
 
--- 8. LIKE starting with A
+
+-- Query 8: LIKE starting with A
 SELECT * FROM employees
 WHERE employee_name LIKE 'A%';
 
--- 9. LIKE ending with a
+
+-- Query 9: LIKE ending with a
 SELECT * FROM employees
 WHERE employee_name LIKE '%a';
 
--- 10. LIKE containing 'an'
+
+-- Query 10: LIKE containing 'an'
 SELECT * FROM employees
 WHERE employee_name LIKE '%an%';
 
--- 11. Combined filters
-SELECT * FROM employees
-WHERE department = 'IT' AND salary > 50000;
 
--- 12. Combined IN and BETWEEN
+-- Query 11: Combined WHERE and AND
+SELECT * FROM employees
+WHERE department = 'IT'
+AND salary > 50000;
+
+
+-- Query 12: IN + BETWEEN
 SELECT * FROM employees
 WHERE city IN ('Delhi', 'Pune')
 AND salary BETWEEN 40000 AND 60000;
+
+
+-- Query 13: Multiple Conditions
+SELECT * FROM employees
+WHERE salary BETWEEN 40000 AND 70000
+AND city IN ('Delhi', 'Mumbai', 'Pune');
